@@ -1,0 +1,386 @@
+{
+	"info": {
+		"_postman_id": "fdf5b2fb-f48c-48ca-a6a2-706905e66c76",
+		"name": "University API Stubs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1332295"
+	},
+	"item": [
+		{
+			"name": "Login User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"testuser\", \"password\": \"testpass\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/dbproj/user",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Student",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"student1\", \"email\": \"student1@example.com\", \"password\": \"pass123\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/dbproj/register/student",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"register",
+						"student"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Staff",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"staff1\", \"email\": \"staff1@example.com\", \"password\": \"pass123\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/dbproj/register/staff",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"register",
+						"staff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Instructor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\": \"instructor1\", \"email\": \"instructor1@example.com\", \"password\": \"pass123\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/dbproj/register/instructor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"register",
+						"instructor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll Degree",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"student_id\": \"1001\", \"date\": \"2024-02-23\"}"
+				},
+				"url": {
+					"raw": "localhost:8080/dbproj/enroll_degree/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"enroll_degree",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll Activity",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/dbproj/enroll_activity/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"enroll_activity",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enroll Course Edition",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"classes\": [101, 102]}"
+				},
+				"url": {
+					"raw": "localhost:8080/dbproj/enroll_course_edition/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"enroll_course_edition",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Submit Grades",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"period\": \"Spring 2024\", \"grades\": [[\"1001\", 15], [\"1002\", 18]]}"
+				},
+				"url": {
+					"raw": "localhost:8080/dbproj/submit_grades/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"submit_grades",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dbproj/student_details/1001",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"student_details",
+						"1001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Degree Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dbproj/degree_details/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"degree_details",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top 3 Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dbproj/top3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"top3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top by District",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dbproj/top_by_district",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"top_by_district"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Monthly Report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dbproj/report",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"report"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Student",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/dbproj/delete_details/1001",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"dbproj",
+						"delete_details",
+						"1001"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "Sample token, should be random!",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
