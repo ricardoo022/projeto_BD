@@ -1,0 +1,287 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'staff_1', 'email': 'staff_1@gmail.com.com', 'password': '123456789', 'district': 'Codimbra', 'address': 'Staff', 'n_staff': '2023219999', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/staff - error: relation "person" does not exist
+LINE 2:     INSERT INTO Person (username, address, district, email, ...
+                        ^
+
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:00:13] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'staff_1', 'email': 'staff_1@gmail.com.com', 'password': '123456789', 'district': 'Codimbra', 'address': 'Staff', 'n_staff': '2023219999', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/staff - error: relation "person" does not exist
+LINE 2:     INSERT INTO Person (username, address, district, email, ...
+                        ^
+
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:00:39] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'staff_1', 'email': 'staff_1@gmail.com.com', 'password': '123456789', 'district': 'Codimbra', 'address': 'Staff', 'n_staff': '2023219999', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:11:32] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'staff_1', 'email': 'staff_1@gmail.com', 'password': '123456789', 'district': 'Codimbra', 'address': 'Staff', 'n_staff': '2023219999', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:12:55] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:13:21] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:13:30] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:14:17] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:14:51] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:15:10] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:15:12] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:15:18] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:15:46] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:16:16] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:16:35] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:16:58] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:19:27] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:19:42] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:20:10] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:21:07] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:21:26] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:22:34] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:22:53] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:44:51] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:47:13] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:Decoding token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+DEBUG:logger:Decoded token: {'id': 1, 'exp': 1746720810}
+ERROR:logger:Error checking staff status: column "id" does not exist
+LINE 1: SELECT id FROM staff WHERE person_id = 1
+               ^
+
+DEBUG:logger:Decoding token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+DEBUG:logger:Decoded token: {'id': 1, 'exp': 1746720810}
+ERROR:logger:Error checking staff status: column "id" does not exist
+LINE 1: SELECT id FROM staff WHERE person_id = 1
+               ^
+
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:50:27] "[35m[1mPOST /dbproj/register/student HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ2NzIwODEwfQ._pn27-_yuPVV1vbogd2zm4puTJVOEGS-u2hZp5AU8eA
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel', 'email': 'ze@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211234', 'birth_date': '12-05-2005'}
+INFO:werkzeug:127.0.0.1 - - [08/May/2025 16:52:12] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080

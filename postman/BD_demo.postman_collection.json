@@ -46,7 +46,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"username\": \"student1\", \"email\": \"student1@example.com\", \"password\": \"pass123\"}"
+	            	"raw": "{\"username\": \"ze_mael\",\"email\": \"ze@gmail.com\",\"password\": \"123456789\",\"district\": \"Coimbra\",\"address\": \"Bairro Norton-Matos\",\"n_student\": \"2023211234\",\"birth_date\": \"12-05-2005\"}"
 				},
 				"url": {
 					"raw": "localhost:8080/dbproj/register/student",
@@ -75,7 +75,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"username\": \"staff1\", \"email\": \"staff1@example.com\", \"password\": \"pass123\"}"
+					"raw": "{ \"username\": \"staff_1\", \"email\": \"staff_1@gmail.com.com\", \"password\": \"123456789\", \"district\": \"Codimbra\", \"address\": \"Staff\", \"n_staff\": \"2023219999\", \"birth_date\": \"12-05-1995\"}"
 				},
 				"url": {
 					"raw": "localhost:8080/dbproj/register/staff",

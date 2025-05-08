@@ -24,6 +24,13 @@ import random
 import datetime
 import jwt
 from functools import wraps
+import bcrypt
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+SECRET_KEY = os.getenv('SECRET_KEY', 'default_secret_key') 
 
 app = flask.Flask(__name__)
 app.config['JWT_SECRET_KEY'] = 'some_jwt_secret_key'
@@ -49,10 +56,6 @@ StatusCodes = {
 
 
 
-
-
-
-
 ##########################################################
 ## DATABASE ACCESS
 ##########################################################
@@ -63,13 +66,13 @@ def db_connection():
         password='aulaspl',
         host='127.0.0.1',
         port='5432',
-        database='aula'
+        database='dbproject'
     )
 
     return db
 
 @app.route('/tables', methods=['POST'])
-def create_table():
+# def create_table():
 
 
 ##########################################################
@@ -88,6 +91,114 @@ def token_required(f):
         return f(*args, **kwargs)
     return decorated
 
+
+##########################################################
+## REUSABLE FUNCTIONS
+##########################################################
+
+def post_a_person():
+    data = flask.request.get_json()
+    username = data.get('username')
+    email = data.get('email')
+    password = data.get('password')
+    district = data.get('district')
+    address = data.get('address')
+    birth_date = data.get('birth_date')
+
+    if not username or not email or not password or not district or not address or not birth_date:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Username, email district, address, n_student , birth_date and password are required', 'results': None})
+    
+    if not username or len(username) < 3:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid username. Must be at least 3 characters long.', 'results': None})
+
+    if not email or '@' not in email or '.' not in email.split('@')[-1]:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid email format.', 'results': None})
+
+    if not password or len(password) < 6:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Password must be at least 6 characters long.', 'results': None})
+
+    if not district or len(district) < 5:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid district. Must be at least 3 characters long.', 'results': None})
+
+    if not address or len(address) < 5:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid address. Must be at least 5 characters long.', 'results': None})
+    
+    try:
+        birth_date_obj = datetime.datetime.strptime(birth_date, '%d-%m-%Y')
+        year, month, day = birth_date_obj.year, birth_date_obj.month, birth_date_obj.day
+
+        if year < 1900:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Year must be 1900 or later.', 'results': None})
+
+        if month < 1 or month > 12:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Month must be between 1 and 12.', 'results': None})
+
+        if month in [1, 3, 5, 7, 8, 10, 12] and (day < 1 or day > 31):
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 31.', 'results': None})
+        elif month in [4, 6, 9, 11] and (day < 1 or day > 30):
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 30.', 'results': None})
+        elif month == 2:
+            is_leap_year = (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0))
+            if is_leap_year and (day < 1 or day > 29):
+                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a leap year. Must be between 1 and 29.', 'results': None})
+            elif not is_leap_year and (day < 1 or day > 28):
+                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a non-leap year. Must be between 1 and 28.', 'results': None})
+
+    except (ValueError, TypeError):
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid birth date format. Must be DD-MM-YYYY.', 'results': None})
+
+    conn = db_connection()
+    cur = conn.cursor()
+
+    person_statement = '''
+    INSERT INTO Person (username, address, district, email, password, birth_date) 
+    VALUES (%s, %s, %s, %s, %s, %s) RETURNING id
+    '''
+    hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
+    person_values = (data['username'], data['address'], data['district'], data['email'], hashed_password, data['birth_date'])
+
+    try:
+        cur.execute(person_statement, person_values)
+        person_id = cur.fetchone()[0]
+        conn.commit()
+        return person_id
+    except (Exception, psycopg2.DatabaseError) as error:
+        conn.rollback()
+        raise error
+    finally:
+        if conn is not None:
+            conn.close()
+
+
+def is_staff(token):
+    try:
+        if token.startswith("Bearer "):
+            token = token.split(" ")[1] 
+        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_id = decoded_token.get('id')
+    except jwt.ExpiredSignatureError:
+        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Token has expired', 'results': None}), 401
+    except jwt.InvalidTokenError as e:
+        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Invalid token', 'results': None}), 401
+
+    conn = db_connection()
+    cur = conn.cursor()
+
+    try:
+        cur.execute('SELECT person_id FROM staff WHERE person_id = %s', (user_id,))
+        if not cur.fetchone():
+            return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Only staff can register students', 'results': None}), 401
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'Error checking staff status: {error}')
+        return flask.jsonify({'status': StatusCodes['internal_error'], 'errors': str(error), 'results': None}), 500
+    finally:
+        if conn is not None:
+            conn.close()
+
+    return 1
+ 
+
 ##########################################################
 ## ENDPOINTS
 ##########################################################
@@ -97,45 +208,135 @@ def login_user():
     data = flask.request.get_json()
     username = data.get('username')
     password = data.get('password')
-
+    conn = db_connection()
+    cur = conn.cursor()
     if not username or not password:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Username and password are required', 'results': None})
+    
+    statement='SELECT id, password FROM person WHERE username=%s'
+    cur.execute(statement, (username,))
+    user = cur.fetchone() #fetchone vai retornar o resultado da query, a pass
 
-    resultAuthToken = "Sample token, should be random!"  # TODO: use JWT
+    if not user:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid username or password', 'results': None})
+
+    # encriptar a pass
+    user_id, stored_hash = user
+
+    # compara a pass ja encriptada com a devolvida na query     
+    if not bcrypt.checkpw(password.encode('utf-8'), stored_hash.encode('utf-8')):
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid username or password', 'results': None})
+
+    # Gerar o token JWT
+    payload = {
+        'id': user_id,
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)  # Token expira em 1 hora
+    }
+    resultAuthToken = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
     response = {'status': StatusCodes['success'], 'errors': None, 'results': resultAuthToken}
+    conn.close()
     return flask.jsonify(response)
 
 @app.route('/dbproj/register/student', methods=['POST'])
 @token_required
 def register_student():
-    data = flask.request.get_json()
-    username = data.get('username')
-    email = data.get('email')
-    password = data.get('password')
-
-    if not username or not email or not password:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Username, email, and password are required', 'results': None})
+    logger.info('POST /dbproj/register/student')
     
-    resultUserId = random.randint(1, 200) # TODO
+    token = flask.request.headers.get('Authorization')
 
-    response = {'status': StatusCodes['success'], 'errors': None, 'results': resultUserId}
+    if is_staff(token) != 1:
+        print('not staff')
+        return is_staff(token)
+    
+    conn = db_connection()
+    cur = conn.cursor()
+
+    data = flask.request.get_json()
+    n_student = data.get('n_student')
+
+    conn = db_connection()
+    cur = conn.cursor()
+
+    logger.debug(f'POST /dbproj/register/student - payload: {data}')
+
+    if not n_student:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Student number is required', 'results': None})
+    
+    if not n_student or not str(n_student).isdigit() or len(str(n_student)) != 10:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid student number. Must be a numeric value with exactly 10 digits.', 'results': None})
+
+    try:
+        person_id = post_a_person()
+
+        student_statement = '''
+        INSERT INTO student (n_student, ammount, mensal_debt, person_id)
+        VALUES (%s, %s, %s, %s)
+        '''
+        student_values = (n_student, 0.0, 0.0, person_id)
+
+        cur.execute(student_statement, student_values)
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Student registered successfully with ID: ' + str(person_id) + ' and student number: ' + str(n_student)}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'POST /register/student - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error)}
+        conn.rollback()
+
+    finally:
+        if conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
 
 @app.route('/dbproj/register/staff', methods=['POST'])
 @token_required
 def register_staff():
-    data = flask.request.get_json()
-    username = data.get('username')
-    email = data.get('email')
-    password = data.get('password')
+    logger.info('POST /dbproj/register/staff')
 
-    if not username or not email or not password:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Username, email, and password are required', 'results': None})
     
-    resultUserId = random.randint(1, 200) # TODO
+    token = flask.request.headers.get('Authorization')
 
-    response = {'status': StatusCodes['success'], 'errors': None, 'results': resultUserId}
+    if is_staff(token) != 1:
+        return is_staff(token)
+    
+    data = flask.request.get_json()
+    n_staff = data.get('n_staff')
+
+    conn = db_connection()
+    cur = conn.cursor()
+
+    logger.debug(f'POST /dbproj/register/staff - payload: {data}')
+
+    if not n_staff:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'staff number is required', 'results': None})
+    
+    if not n_staff or not str(n_staff).isdigit() or len(str(n_staff)) != 10:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid staff number. Must be a numeric value with exactly 10 digits.', 'results': None})
+
+    try:
+        person_id = post_a_person()
+
+        staff_statement = '''
+        INSERT INTO staff (n_staff, person_id)
+        VALUES (%s, %s)
+        '''
+        staff_values = (n_staff, person_id)
+
+        cur.execute(staff_statement, staff_values)
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Inserted staff with ID: ' + str(person_id) + ' and staff number: ' + str(n_staff)}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'POST /register/staff - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error)}
+        conn.rollback()
+
+    finally:
+        if conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
 
 @app.route('/dbproj/register/instructor', methods=['POST'])
