@@ -171,7 +171,7 @@ def post_a_person():
             conn.close()
 
 
-def is_staff(token):
+def is_admin(token):
     try:
         if token.startswith("Bearer "):
             token = token.split(" ")[1] 
@@ -186,11 +186,11 @@ def is_staff(token):
     cur = conn.cursor()
 
     try:
-        cur.execute('SELECT person_id FROM staff WHERE person_id = %s', (user_id,))
+        cur.execute('SELECT staff_person_id FROM admin WHERE staff_person_id = %s', (user_id,))
         if not cur.fetchone():
-            return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Only staff can register students', 'results': None}), 401
+            return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Only admins can use this query', 'results': None}), 401
     except (Exception, psycopg2.DatabaseError) as error:
-        logger.error(f'Error checking staff status: {error}')
+        logger.error(f'Error checking admin status: {error}')
         return flask.jsonify({'status': StatusCodes['internal_error'], 'errors': str(error), 'results': None}), 500
     finally:
         if conn is not None:
@@ -198,6 +198,35 @@ def is_staff(token):
 
     return 1
  
+
+def is_student(token):
+    try:
+        if token.startswith("Bearer "):
+            token = token.split(" ")[1] 
+        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_id = decoded_token.get('id')
+    except jwt.ExpiredSignatureError:
+        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Token has expired', 'results': None}), 401
+    except jwt.InvalidTokenError as e:
+        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Invalid token', 'results': None}), 401
+
+    conn = db_connection()
+    cur = conn.cursor()
+
+    try:
+        cur.execute('SELECT person_id FROM student WHERE person_id = %s', (user_id,))
+        if not cur.fetchone():
+            return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Only student can use this query', 'results': None}), 401
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'Error checking student status: {error}')
+        return flask.jsonify({'status': StatusCodes['internal_error'], 'errors': str(error), 'results': None}), 500
+    finally:
+        if conn is not None:
+            conn.close()
+
+    return 1
+
+
 
 ##########################################################
 ## ENDPOINTS
@@ -245,9 +274,8 @@ def register_student():
     
     token = flask.request.headers.get('Authorization')
 
-    if is_staff(token) != 1:
-        print('not staff')
-        return is_staff(token)
+    if is_admin(token) != 1:
+        return is_admin(token)
     
     conn = db_connection()
     cur = conn.cursor()
@@ -292,14 +320,13 @@ def register_student():
 
 @app.route('/dbproj/register/staff', methods=['POST'])
 @token_required
-def register_staff():
+def register_staff_admin():
     logger.info('POST /dbproj/register/staff')
 
-    
     token = flask.request.headers.get('Authorization')
 
-    if is_staff(token) != 1:
-        return is_staff(token)
+    if is_admin(token) != 1:
+        return is_admin(token)
     
     data = flask.request.get_json()
     n_staff = data.get('n_staff')
@@ -310,7 +337,7 @@ def register_staff():
     logger.debug(f'POST /dbproj/register/staff - payload: {data}')
 
     if not n_staff:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'staff number is required', 'results': None})
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Staff number is required', 'results': None})
     
     if not n_staff or not str(n_staff).isdigit() or len(str(n_staff)) != 10:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid staff number. Must be a numeric value with exactly 10 digits.', 'results': None})
@@ -325,6 +352,13 @@ def register_staff():
         staff_values = (n_staff, person_id)
 
         cur.execute(staff_statement, staff_values)
+
+        admin_statement = '''
+        INSERT INTO admin (staff_person_id)
+        VALUES (%s)
+        '''
+        cur.execute(admin_statement, (person_id,))
+
         conn.commit()
         response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Inserted staff with ID: ' + str(person_id) + ' and staff number: ' + str(n_staff)}
 
@@ -377,13 +411,76 @@ def enroll_activity(activity_id):
 @app.route('/dbproj/enroll_course_edition/<course_edition_id>', methods=['POST'])
 @token_required
 def enroll_course_edition(course_edition_id):
+    logger.info(f'POST /dbproj/enroll_course_edition/{course_edition_id}')
+    
+    token = flask.request.headers.get('Authorization')
+
+    if is_student(token) != 1:
+        return is_student(token)
+
     data = flask.request.get_json()
     classes = data.get('classes', [])
 
     if not classes:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'At least one class ID is required', 'results': None})
-    
-    response = {'status': StatusCodes['success'], 'errors': None}
+
+    conn = db_connection()
+    cur = conn.cursor()
+
+    try:
+        if token.startswith("Bearer "):
+            token = token.split(" ")[1]
+        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        student_id = decoded_token.get('id')
+
+        logger.debug(f'Student ID: {student_id}, Classes: {classes}')
+
+        for class_id in classes:
+            # Verificar se a turma pertence à edição do curso
+            cur.execute('''
+                SELECT capacity, edition_id
+                FROM class_time_table
+                WHERE id = %s
+            ''', (class_id,))
+            class_info = cur.fetchone()
+
+            if not class_info:
+                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Class ID {class_id} does not exist', 'results': None})
+
+            capacity, edition_id = class_info
+
+            if edition_id != int(course_edition_id):
+                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Class ID {class_id} does not belong to course edition {course_edition_id}', 'results': None})
+
+            # Verificar se há capacidade disponível
+            cur.execute('''
+                SELECT COUNT(*) 
+                FROM enrolment_class 
+                WHERE class_time_table_id = %s
+            ''', (class_id,))
+            enrolled_count = cur.fetchone()[0]
+
+            if enrolled_count >= int(capacity):
+                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Class ID {class_id} is full', 'results': None})
+
+            # Inserir na tabela enrolment_class
+            cur.execute('''
+                INSERT INTO enrolment_class (entry, student_person_id, class_time_table_id)
+                VALUES (%s, %s, %s)
+            ''', (True, student_id, class_id))
+
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': f'Successfully enrolled in classes: {classes}'}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'POST /enroll_course_edition - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error)}
+        conn.rollback()
+
+    finally:
+        if conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
 
 @app.route('/dbproj/submit_grades/<course_edition_id>', methods=['POST'])

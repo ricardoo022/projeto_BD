@@ -285,3 +285,75 @@ WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 130-243-023
 INFO:logger:API stubs online: http://127.0.0.1:8080
 INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:POST /dbproj/enroll_course_edition/6
+INFO:werkzeug:127.0.0.1 - - [10/May/2025 22:44:16] "[31m[1mPOST /dbproj/enroll_course_edition/6 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [10/May/2025 22:44:41] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNzQ2OTE3MDgxfQ.nIVStqouBgaat0Ixjf-Ghbb7qghBYbzshP-QTO24GSI
+INFO:logger:POST /dbproj/enroll_course_edition/6
+DEBUG:logger:Student ID: 2, Classes: [9]
+INFO:werkzeug:127.0.0.1 - - [10/May/2025 22:45:01] "POST /dbproj/enroll_course_edition/6 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 130-243-023
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
