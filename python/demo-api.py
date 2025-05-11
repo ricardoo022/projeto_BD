@@ -99,13 +99,14 @@ def token_required(f):
 def post_a_person():
     data = flask.request.get_json()
     username = data.get('username')
+    name = data.get('name')
     email = data.get('email')
     password = data.get('password')
     district = data.get('district')
     address = data.get('address')
     birth_date = data.get('birth_date')
 
-    if not username or not email or not password or not district or not address or not birth_date:
+    if not username or not email or not password or not district or not address or not birth_date or not name:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Username, email district, address, n_student , birth_date and password are required', 'results': None})
     
     if not username or len(username) < 3:
@@ -120,8 +121,9 @@ def post_a_person():
     if not district or len(district) < 5:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid district. Must be at least 3 characters long.', 'results': None})
 
-    if not address or len(address) < 5:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid address. Must be at least 5 characters long.', 'results': None})
+    if len(name) < 3:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid name. Must be at least 3 characters long.', 'results': None})
+    
     
     try:
         birth_date_obj = datetime.datetime.strptime(birth_date, '%d-%m-%Y')
@@ -151,12 +153,12 @@ def post_a_person():
     cur = conn.cursor()
 
     person_statement = '''
-    INSERT INTO Person (username, address, district, email, password, birth_date) 
-    VALUES (%s, %s, %s, %s, %s, %s) RETURNING id
+    INSERT INTO Person (username, address, district, email, password, birth_date,name) 
+    VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id
     '''
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
-    person_values = (data['username'], data['address'], data['district'], data['email'], hashed_password, data['birth_date'])
+    person_values = (data['username'], data['address'], data['district'], data['email'], hashed_password, data['birth_date'], data['name'])
 
     try:
         cur.execute(person_statement, person_values)
@@ -225,6 +227,8 @@ def is_student(token):
             conn.close()
 
     return 1
+
+
 
 
 
@@ -392,14 +396,73 @@ def register_instructor():
 @app.route('/dbproj/enroll_degree/<degree_id>', methods=['POST'])
 @token_required
 def enroll_degree(degree_id):
+
+    token = flask.request.headers.get('Authorization')
+
+    if is_admin(token) != 1:
+        return is_admin(token)
+    
     data = flask.request.get_json()
     student_id = data.get('student_id')
     date = data.get('date')
 
+    conn = db_connection()
+    cur = conn.cursor()
+
     if not student_id or not date:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Student ID and date are required', 'results': None})
     
-    response = {'status': StatusCodes['success'], 'errors': None}
+    try:
+        date_obj = datetime.datetime.strptime(date, '%d-%m-%Y')
+        year, month, day = date_obj.year, date_obj.month, date_obj.day
+
+        if year < 1900:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Year must be 1900 or later.', 'results': None})
+
+        if month < 1 or month > 12:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Month must be between 1 and 12.', 'results': None})
+
+        if month in [1, 3, 5, 7, 8, 10, 12] and (day < 1 or day > 31):
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 31.', 'results': None})
+        elif month in [4, 6, 9, 11] and (day < 1 or day > 30):
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 30.', 'results': None})
+        elif month == 2:
+            is_leap_year = (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0))
+            if is_leap_year and (day < 1 or day > 29):
+                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a leap year. Must be between 1 and 29.', 'results': None})
+            elif not is_leap_year and (day < 1 or day > 28):
+                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a non-leap year. Must be between 1 and 28.', 'results': None})
+
+    except (ValueError, TypeError):
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid birth date format. Must be DD-MM-YYYY.', 'results': None})
+    
+    try:
+        cur.execute('SELECT person_id FROM student WHERE n_student = %s', (student_id,))
+        student = cur.fetchone()
+        if not student:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Student not found', 'results': None})
+        student_person_id = student[0]
+
+        cur.execute('SELECT id FROM degree WHERE id = %s', (degree_id,))
+        if not cur.fetchone():
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Degree not found', 'results': None})
+        
+        statement= '''INSERT INTO enrollement (enroll_date, student_person_id, degree_id) VALUES (%s, %s, %s)'''
+        values = (date, student_person_id, degree_id)
+        cur.execute(statement, values)
+        
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'results': f'Student {student_id} enrolled in degree {degree_id}'}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'POST /enroll_degree - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error)}
+        conn.rollback()
+
+    finally:
+        if conn is not None:
+            conn.close()
+    
     return flask.jsonify(response)
 
 @app.route('/dbproj/enroll_activity/<activity_id>', methods=['POST'])
