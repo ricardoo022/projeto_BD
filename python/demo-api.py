@@ -380,18 +380,68 @@ def register_staff_admin():
 @app.route('/dbproj/register/instructor', methods=['POST'])
 @token_required
 def register_instructor():
-    data = flask.request.get_json()
-    username = data.get('username')
-    email = data.get('email')
-    password = data.get('password')
+    logger.info('POST /dbproj/register/instructor')
 
-    if not username or not email or not password:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Username, email, and password are required', 'results': None})
+    token = flask.request.headers.get('Authorization')
+
+    if is_admin(token) != 1:
+        return is_admin(token)
     
-    resultUserId = random.randint(1, 200) # TODO
+    conn = db_connection()
+    cur = conn.cursor()
+    
+    data = flask.request.get_json()
+    n_staff = data.get('n_staff')
+    cordenator = data.get('cordenator')
+    assistent = data.get('assistent')
 
-    response = {'status': StatusCodes['success'], 'errors': None, 'results': resultUserId}
+    logger.debug(f'POST /dbproj/register/instructor - payload: {data}')
+
+    if not n_staff or not cordenator is not None or not assistent is not None:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Staff number, cordenator and assistent are required', 'results': None})
+    
+    if not n_staff or not str(n_staff).isdigit() or len(str(n_staff)) != 10:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid Staff number. Must be a numeric value with exactly 10 digits.', 'results': None})
+    
+    if not isinstance(cordenator, bool) or not isinstance(assistent, bool):
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'cordenator and assistent must be boolean values (true or false)', 'results': None})
+    
+    try:
+        person_id = post_a_person()
+
+        instructor_statement = '''
+        INSERT INTO staff (n_staff, person_id)
+        VALUES (%s, %s)
+        '''
+        instructor_values = (n_staff, person_id)
+
+        cur = conn.cursor()
+        cur.execute(instructor_statement, instructor_values)
+
+        professor_statement = '''
+        INSERT INTO professor (cordenad, asistente, staff_person_id)
+        VALUES (%s, %s, %s)
+        '''
+        professor_values = (cordenator, assistent, person_id)
+        cur.execute(professor_statement, professor_values)
+
+        conn.commit()
+        if cordenator:
+            response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Inserted instructor with ID: ' + str(person_id) + ' that is a cordenator'}
+        else:
+            response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Inserted instructor with ID: ' + str(person_id) + ' that is an assistent'}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'POST /register/instructor - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error)}
+        conn.rollback()
+
+    finally:
+        if conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
+
 
 @app.route('/dbproj/enroll_degree/<degree_id>', methods=['POST'])
 @token_required
