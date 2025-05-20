@@ -534,3 +534,668 @@ INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwI
 INFO:werkzeug:127.0.0.1 - - [11/May/2025 11:27:14] "POST /dbproj/enroll_degree/1 HTTP/1.1" 200 -
 INFO:logger:API stubs online: http://127.0.0.1:8080
 INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:werkzeug:127.0.0.1 - - [19/May/2025 14:15:19] "[31m[1mPOST /dbproj/submit_grades/1 HTTP/1.1[0m" 401 -
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug:127.0.0.1 - - [19/May/2025 15:00:17] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/May/2025 15:01:00] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [19/May/2025 15:02:19] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:22:31] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:25:54] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:26:29] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:26:44] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:27:22] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:27:38] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:28:17] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:28:46] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:29:21] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:30:22] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 10:30:49] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:08:00] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:08:06] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:08:21] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:16:48] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:17:20] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:17:22] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:20:16] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:20:17] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:21:10] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:21:11] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:26:52] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:26:54] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:27:31] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:30:17] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:30:18] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:34:07] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:34:27] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:37:58] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:38:12] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:39:48] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:41:09] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:42:30] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:44:01] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:44:12] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:44:22] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:44:31] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:44:40] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:44:47] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:45:04] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:45:05] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:45:06] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:45:23] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:46:05] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:47:56] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'name': 'ande', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:49:27] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'name': 'ande', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:49:28] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'zessss', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'name': 'ande', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:50:14] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'zessss', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'name': '123456', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:50:23] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'zessss', 'email': 'ze.doe@eyxample.com', 'password': '12345', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'name': '1234567', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:50:33] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'zessss', 'email': 'ze.doe@eyxample.com', 'password': '1234567', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'name': '1234567', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "student_n_student_key"
+DETAIL:  Chave (n_student)=(1234467893) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:50:43] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:51:39] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andre12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467893', 'birth_date': '12-05-1995', 'n_staff': '1323213510'}
+ERROR:logger:POST /register/staff - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "staff_n_staff_key"
+DETAIL:  Chave (n_staff)=(1323213510) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:52:37] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andre12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '123446789300', 'birth_date': '12-05-1995', 'n_staff': '1323213510'}
+ERROR:logger:POST /register/staff - error: ERRO:  o valor nulo na coluna "person_id" da relação "staff" viola a restrição de não-nulo
+DETAIL:  Registro que falhou contém (1323213510, null).
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:52:47] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andre12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '123446789300', 'birth_date': '12-05-1995', 'n_staff': '13232135101'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:53:11] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andre12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '123446789300', 'birth_date': '12-05-1995', 'n_staff': '1323213510'}
+ERROR:logger:POST /register/staff - error: ERRO:  o valor nulo na coluna "person_id" da relação "staff" viola a restrição de não-nulo
+DETAIL:  Registro que falhou contém (1323213510, null).
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:53:22] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andre12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'birth_date': '12-05-1995', 'n_staff': '1323213510'}
+ERROR:logger:POST /register/staff - error: ERRO:  o valor nulo na coluna "person_id" da relação "staff" viola a restrição de não-nulo
+DETAIL:  Registro que falhou contém (1323213510, null).
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:53:47] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andre12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'birth_date': '12-05-1995', 'n_staff': '1323213510'}
+ERROR:logger:POST /register/staff - error: ERRO:  o valor nulo na coluna "person_id" da relação "staff" viola a restrição de não-nulo
+DETAIL:  Registro que falhou contém (1323213510, null).
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:54:08] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andre12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'birth_date': '12-05-1995', 'n_staff': 1323213510}
+ERROR:logger:POST /register/staff - error: ERRO:  o valor nulo na coluna "person_id" da relação "staff" viola a restrição de não-nulo
+DETAIL:  Registro que falhou contém (1323213510, null).
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:55:05] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andr12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'birth_date': '12-05-1995', 'n_staff': 1323213510}
+ERROR:logger:POST /register/staff - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "staff_n_staff_key"
+DETAIL:  Chave (n_staff)=(1323213510) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:55:28] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'xndre132', 'name': 'Andre', 'email': 'andr12432@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'birth_date': '12-05-1995', 'n_staff': 1323210510}
+ERROR:logger:POST /register/staff - error: ERRO:  o valor nulo na coluna "person_id" da relação "staff" viola a restrição de não-nulo
+DETAIL:  Registro que falhou contém (1323210510, null).
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:55:40] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:56:48] "[31m[1mPOST /dbproj/register/staff HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'andre132', 'name': 'Andre', 'email': 'andre12432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1323213510}
+ERROR:logger:POST /register/staff - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "staff_n_staff_key"
+DETAIL:  Chave (n_staff)=(1323213510) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:57:04] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'andre132', 'name': 'Andre', 'email': 'andre12432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1303213510}
+ERROR:logger:POST /register/staff - error: ERRO:  o valor nulo na coluna "person_id" da relação "staff" viola a restrição de não-nulo
+DETAIL:  Registro que falhou contém (1303213510, null).
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:57:19] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'andre66132', 'name': 'Andre', 'email': 'andre12432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1303213510}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 14:58:47] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:00:11] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:00:14] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:00:31] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'axxx', 'name': 'Andre', 'email': 'axxe12432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1313213510}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:13:37] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:16:24] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:16:38] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:17:23] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:22:35] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:24:17] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'axxx', 'name': 'Andre', 'email': 'axxe12432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1313213510}
+ERROR:logger:POST /register/staff - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "person_username_email_key"
+DETAIL:  Chave (username, email)=(axxx, axxe12432@example.com) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:24:54] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': '2222', 'name': 'Andre', 'email': 'axxe12432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1313213510}
+ERROR:logger:POST /register/staff - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "staff_n_staff_key"
+DETAIL:  Chave (n_staff)=(1313213510) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:06] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': '2222', 'name': 'Andre', 'email': 'axxe12432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1313213110}
+ERROR:logger:POST /register/staff - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "person_username_email_key"
+DETAIL:  Chave (username, email)=(2222, axxe12432@example.com) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:13] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': '2222', 'name': 'Andre', 'email': 'ax212432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1313213110}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:20] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:32] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ3NzM2ODA0fQ.kAsBgtG0Skos4cBZG5mdjVdJFRc75PN3UysSkJJCXlk
+INFO:logger:POST /dbproj/register/student
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:34] "[31m[1mPOST /dbproj/register/student HTTP/1.1[0m" 401 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsImV4cCI6MTc1MDM0MzA1N30.zE2E-UaC2-o27G_HlwPLuDlnFpNgPh40TQeqRhwKM1M
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'zessssdss', 'email': 'ze.doe@eyxample.com', 'password': '1234567', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234467891', 'name': '1234567', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "student_n_student_key"
+DETAIL:  Chave (n_student)=(1234467891) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:43] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsImV4cCI6MTc1MDM0MzA1N30.zE2E-UaC2-o27G_HlwPLuDlnFpNgPh40TQeqRhwKM1M
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'zessssdss', 'email': 'ze.doe@eyxample.com', 'password': '1234567', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234461891', 'name': '1234567', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: ERRO:  duplicar valor da chave viola a restrição de unicidade "person_username_email_key"
+DETAIL:  Chave (username, email)=(zessssdss, ze.doe@eyxample.com) já existe.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:26:22] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MjUsImV4cCI6MTc1MDM0MzA1N30.zE2E-UaC2-o27G_HlwPLuDlnFpNgPh40TQeqRhwKM1M
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'zesdss', 'email': 'zepdoe@eyxample.com', 'password': '1234567', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234461891', 'name': '1234567', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:26:34] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080

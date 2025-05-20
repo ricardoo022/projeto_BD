@@ -96,6 +96,63 @@ def token_required(f):
 ## REUSABLE FUNCTIONS
 ##########################################################
 
+def validate_date(date_str):
+    try:
+        date_obj = datetime.datetime.strptime(date_str, '%d-%m-%Y')
+        year, month, day = date_obj.year, date_obj.month, date_obj.day
+
+        if year < 1900:
+            return False, 'Year must be 1900 or later.'
+
+        if month < 1 or month > 12:
+            return False, 'Month must be between 1 and 12.'
+
+        if month in [1, 3, 5, 7, 8, 10, 12] and (day < 1 or day > 31):
+            return False, f'Invalid day for month {month}. Must be between 1 and 31.'
+        elif month in [4, 6, 9, 11] and (day < 1 or day > 30):
+            return False, f'Invalid day for month {month}. Must be between 1 and 30.'
+        elif month == 2:
+            is_leap_year = (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0))
+            if is_leap_year and (day < 1 or day > 29):
+                return False, 'Invalid day for February in a leap year. Must be between 1 and 29.'
+            elif not is_leap_year and (day < 1 or day > 28):
+                return False, 'Invalid day for February in a non-leap year. Must be between 1 and 28.'
+
+        return True, None
+    except (ValueError, TypeError):
+        return False, 'Invalid date format. Must be DD-MM-YYYY.'
+
+
+def verify_grade(grade_array):
+    conn = db_connection()
+    cur = conn.cursor()
+
+    # Verifica IDs duplicados
+    student_ids = [grade[0] for grade in grade_array]
+    if len(student_ids) != len(set(student_ids)):
+        return False, 'Duplicate student IDs are not allowed.'
+    
+    # Verifica se os IDs dos estudantes existem
+    for grade in grade_array:
+        statment="Select person_id from student where person_id = %s"
+        cur.execute(statment, (grade[0],))
+        student = cur.fetchone()
+        if not student:
+            return False, 'Student not found.'
+        if grade[1] < 0 or grade[1] > 20:
+            return False, 'Invalid grade. Must be between 0 and 20.'
+
+        statment="Select from student where n_student = %s"
+        cur.execute(statment, (grade,))
+        student = cur.fetchone()
+        if not student:
+            return False, 'Student not found.'
+        date=validate_date(grade[2])
+        if not date:
+            return False, 'Invalid date.'
+
+    return True, None
+
 def post_a_person():
     data = flask.request.get_json()
     username = data.get('username')
@@ -121,33 +178,12 @@ def post_a_person():
     if not district or len(district) < 5:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid district. Must be at least 3 characters long.', 'results': None})
 
-    if len(name) < 3:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid name. Must be at least 3 characters long.', 'results': None})
-    
-    
-    try:
-        birth_date_obj = datetime.datetime.strptime(birth_date, '%d-%m-%Y')
-        year, month, day = birth_date_obj.year, birth_date_obj.month, birth_date_obj.day
+    if not address or len(address) < 5:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid address. Must be at least 5 characters long.', 'results': None})
 
-        if year < 1900:
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Year must be 1900 or later.', 'results': None})
-
-        if month < 1 or month > 12:
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Month must be between 1 and 12.', 'results': None})
-
-        if month in [1, 3, 5, 7, 8, 10, 12] and (day < 1 or day > 31):
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 31.', 'results': None})
-        elif month in [4, 6, 9, 11] and (day < 1 or day > 30):
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 30.', 'results': None})
-        elif month == 2:
-            is_leap_year = (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0))
-            if is_leap_year and (day < 1 or day > 29):
-                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a leap year. Must be between 1 and 29.', 'results': None})
-            elif not is_leap_year and (day < 1 or day > 28):
-                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a non-leap year. Must be between 1 and 28.', 'results': None})
-
-    except (ValueError, TypeError):
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid birth date format. Must be DD-MM-YYYY.', 'results': None})
+    is_valid, error_message = validate_date(birth_date)
+    if not is_valid:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': error_message, 'results': None})
 
     conn = db_connection()
     cur = conn.cursor()
@@ -229,6 +265,33 @@ def is_student(token):
     return 1
 
 
+def is_coordinator(token):
+    try:
+        if token.startswith("Bearer "):
+            token = token.split(" ")[1] 
+        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        user_id = decoded_token.get('id')
+    except jwt.ExpiredSignatureError:
+        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Token has expired', 'results': None}), 401
+    except jwt.InvalidTokenError as e:
+        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Invalid token', 'results': None}), 401
+
+    conn = db_connection()
+    cur = conn.cursor()
+
+    try:
+        cur.execute('SELECT cordenad FROM professor WHERE staff_person_id = %s', (user_id,))
+        if not cur.fetchone() or cur.fetchone()[0] == False:
+            return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Only admins can use this query', 'results': None}), 401
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'Error checking admin status: {error}')
+        return flask.jsonify({'status': StatusCodes['internal_error'], 'errors': str(error), 'results': None}), 500
+    finally:
+        if conn is not None:
+            conn.close()
+
+    return 1
+
 
 
 
@@ -263,7 +326,7 @@ def login_user():
     # Gerar o token JWT
     payload = {
         'id': user_id,
-        'exp': datetime.datetime.utcnow() + datetime.timedelta(hours=1)  # Token expira em 1 hora
+        'exp': datetime.datetime.utcnow() + datetime.timedelta(days=30)  # 1 mês de validade
     }
     resultAuthToken = jwt.encode(payload, SECRET_KEY, algorithm='HS256')
 
@@ -277,13 +340,9 @@ def register_student():
     logger.info('POST /dbproj/register/student')
     
     token = flask.request.headers.get('Authorization')
-
     if is_admin(token) != 1:
         return is_admin(token)
     
-    conn = db_connection()
-    cur = conn.cursor()
-
     data = flask.request.get_json()
     n_student = data.get('n_student')
 
@@ -300,6 +359,8 @@ def register_student():
 
     try:
         person_id = post_a_person()
+        if person_id is None:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid person data', 'results': None})
 
         student_statement = '''
         INSERT INTO student (n_student, ammount, mensal_debt, person_id)
@@ -329,8 +390,7 @@ def register_staff_admin():
 
     token = flask.request.headers.get('Authorization')
 
-    if is_admin(token) != 1:
-        return is_admin(token)
+
     
     data = flask.request.get_json()
     n_staff = data.get('n_staff')
@@ -462,29 +522,9 @@ def enroll_degree(degree_id):
     if not student_id or not date:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Student ID and date are required', 'results': None})
     
-    try:
-        date_obj = datetime.datetime.strptime(date, '%d-%m-%Y')
-        year, month, day = date_obj.year, date_obj.month, date_obj.day
-
-        if year < 1900:
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Year must be 1900 or later.', 'results': None})
-
-        if month < 1 or month > 12:
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Month must be between 1 and 12.', 'results': None})
-
-        if month in [1, 3, 5, 7, 8, 10, 12] and (day < 1 or day > 31):
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 31.', 'results': None})
-        elif month in [4, 6, 9, 11] and (day < 1 or day > 30):
-            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid day for month {month}. Must be between 1 and 30.', 'results': None})
-        elif month == 2:
-            is_leap_year = (year % 4 == 0 and (year % 100 != 0 or year % 400 == 0))
-            if is_leap_year and (day < 1 or day > 29):
-                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a leap year. Must be between 1 and 29.', 'results': None})
-            elif not is_leap_year and (day < 1 or day > 28):
-                return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid day for February in a non-leap year. Must be between 1 and 28.', 'results': None})
-
-    except (ValueError, TypeError):
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Invalid birth date format. Must be DD-MM-YYYY.', 'results': None})
+    is_valid, error_message = validate_date(date)
+    if not is_valid:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': error_message, 'results': None})
     
     try:
         cur.execute('SELECT person_id FROM student WHERE n_student = %s', (student_id,))
@@ -599,12 +639,37 @@ def enroll_course_edition(course_edition_id):
 @app.route('/dbproj/submit_grades/<course_edition_id>', methods=['POST'])
 @token_required
 def submit_grades(course_edition_id):
+    token = flask.request.headers.get('Authorization')
+    if is_coordinator(token) != 1:
+        return is_coordinator(token)
+
+
     data = flask.request.get_json()
     period = data.get('period')
     grades = data.get('grades', [])
 
     if not period or not grades:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Evaluation period and grades are required', 'results': None})
+        
+    is_valid, error_message = verify_grade(grades)
+    if not is_valid:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': error_message, 'results': None})
+
+
+    conn = db_connection()
+    cur = conn.cursor()
+    for grade in grades:
+        student_id=grade[0]
+        value=grade[1]
+        date=grade[2]
+        cur.execute('''insert into grade (student_person_id,period__id,date_of_degree,grade,edition_id)
+        select %s,
+        (select period_.id from period where name=%s and edition_id=%s),
+        %s,
+        %s,
+        %s''',(student_id,period,course_edition_id,date,value,course_edition_id))
+        
+    
     
     response = {'status': StatusCodes['success'], 'errors': None}
     return flask.jsonify(response)
