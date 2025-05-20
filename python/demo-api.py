@@ -134,7 +134,7 @@ def verify_grade(grade_array):
     
     # Verifica se os IDs dos estudantes existem
     for grade in grade_array:
-        statment="Select person_id from student where person_id = %s"
+        statment="Select person_id from student where n_student = %s"
         cur.execute(statment, (grade[0],))
         student = cur.fetchone()
         if not student:
@@ -142,14 +142,9 @@ def verify_grade(grade_array):
         if grade[1] < 0 or grade[1] > 20:
             return False, 'Invalid grade. Must be between 0 and 20.'
 
-        statment="Select from student where n_student = %s"
-        cur.execute(statment, (grade,))
-        student = cur.fetchone()
-        if not student:
-            return False, 'Student not found.'
-        date=validate_date(grade[2])
-        if not date:
-            return False, 'Invalid date.'
+        is_valid, error_message =validate_date(grade[2])
+        if not is_valid:
+            return False, error_message
 
     return True, None
 
@@ -281,10 +276,11 @@ def is_coordinator(token):
 
     try:
         cur.execute('SELECT cordenad FROM professor WHERE staff_person_id = %s', (user_id,))
-        if not cur.fetchone() or cur.fetchone()[0] == False:
-            return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Only admins can use this query', 'results': None}), 401
+        result = cur.fetchone()
+        if not result or not result[0]:
+            return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Only coordinators can use this query', 'results': None}), 401
     except (Exception, psycopg2.DatabaseError) as error:
-        logger.error(f'Error checking admin status: {error}')
+        logger.error(f'Error checking coordinator status: {error}')
         return flask.jsonify({'status': StatusCodes['internal_error'], 'errors': str(error), 'results': None}), 500
     finally:
         if conn is not None:
@@ -643,7 +639,6 @@ def submit_grades(course_edition_id):
     if is_coordinator(token) != 1:
         return is_coordinator(token)
 
-
     data = flask.request.get_json()
     period = data.get('period')
     grades = data.get('grades', [])
@@ -655,23 +650,33 @@ def submit_grades(course_edition_id):
     if not is_valid:
         return flask.jsonify({'status': StatusCodes['api_error'], 'errors': error_message, 'results': None})
 
-
     conn = db_connection()
     cur = conn.cursor()
-    for grade in grades:
-        student_id=grade[0]
-        value=grade[1]
-        date=grade[2]
-        cur.execute('''insert into grade (student_person_id,period__id,date_of_degree,grade,edition_id)
-        select %s,
-        (select period_.id from period where name=%s and edition_id=%s),
-        %s,
-        %s,
-        %s''',(student_id,period,course_edition_id,date,value,course_edition_id))
+    try:
+        for grade in grades:
+            student_id = grade[0]
+            value = grade[1]
+            date = grade[2]
+            cur.execute('''
+                insert into grade (student_person_id, period__id, date_of_degree, grade, edition_id)
+                select 
+                    (select person_id from student where n_student = %s),
+                    (select period_.id from period_ where name = %s and edition_id = %s),
+                    %s,
+                    %s,
+                    %s
+            ''', (student_id, period, course_edition_id, date, value, course_edition_id))
         
-    
-    
-    response = {'status': StatusCodes['success'], 'errors': None}
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Grades submitted successfully'}
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'POST /submit_grades - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error)}
+        conn.rollback()
+    finally:
+        if conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
 
 @app.route('/dbproj/student_details/<student_id>', methods=['GET'])
@@ -801,6 +806,15 @@ def monthly_report():
 @token_required
 def delete_student(student_id):
     response = {'status': StatusCodes['success'], 'errors': None}
+
+    conn = db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute('DELETE FROM student WHERE n_student = %s', (student_id,))
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Student deleted successfully'}
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'DELETE /delete_details/{student_id} - error: {error}')
     return flask.jsonify(response)
 
 if __name__ == '__main__':
