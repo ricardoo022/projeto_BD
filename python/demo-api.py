@@ -19,7 +19,6 @@
 import flask
 import logging
 import psycopg2
-import time
 import random
 import datetime
 import jwt
@@ -27,7 +26,6 @@ from functools import wraps
 import bcrypt
 from dotenv import load_dotenv
 import os
-import re
 
 load_dotenv()
 
