@@ -222,7 +222,7 @@ def is_admin(token):
         if conn is not None:
             conn.close()
 
-    return 1
+    return user_id
  
 
 def is_student(token):
@@ -242,7 +242,7 @@ def is_student(token):
         if conn is not None:
             conn.close()
 
-    return 1
+    return user_id
 
 
 def is_coordinator(token):
@@ -262,7 +262,7 @@ def is_coordinator(token):
         if conn is not None:
             conn.close()
 
-    return 1
+    return user_id
 
 
 ##########################################################
@@ -310,8 +310,10 @@ def register_student():
     logger.info('POST /dbproj/register/student')
     
     token = flask.request.headers.get('Authorization')
-    if is_admin(token) != 1:
-        return is_admin(token)
+
+    admin_id = is_admin(token)
+    if not isinstance(admin_id, int):
+        return admin_id
     
     data = flask.request.get_json()
     n_student = data.get('n_student')
@@ -414,8 +416,9 @@ def register_instructor():
 
     token = flask.request.headers.get('Authorization')
 
-    if is_admin(token) != 1:
-        return is_admin(token)
+    admin_id = is_admin(token)
+    if not isinstance(admin_id, int):
+        return admin_id
     
     conn = db_connection()
     cur = conn.cursor()
@@ -479,8 +482,9 @@ def enroll_degree(degree_id):
 
     token = flask.request.headers.get('Authorization')
 
-    if is_admin(token) != 1:
-        return is_admin(token)
+    admin_id = is_admin(token)
+    if not isinstance(admin_id, int):
+        return admin_id
     
     data = flask.request.get_json()
     student_id = data.get('student_id')
@@ -538,8 +542,9 @@ def enroll_course_edition(course_edition_id):
     
     token = flask.request.headers.get('Authorization')
 
-    if is_student(token) != 1:
-        return is_student(token)
+    student_id = is_student(token)
+    if not isinstance(student_id, int):
+        return student_id   
 
     data = flask.request.get_json()
     classes = data.get('classes', [])
@@ -551,10 +556,6 @@ def enroll_course_edition(course_edition_id):
     cur = conn.cursor()
 
     try:
-        if token.startswith("Bearer "):
-            token = token.split(" ")[1]
-        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-        student_id = decoded_token.get('id')
 
         logger.debug(f'Student ID: {student_id}, Classes: {classes}')
 
@@ -610,8 +611,10 @@ def enroll_course_edition(course_edition_id):
 @token_required
 def submit_grades(course_edition_id):
     token = flask.request.headers.get('Authorization')
-    if is_coordinator(token) != 1:
-        return is_coordinator(token)
+
+    coordinator_id = is_coordinator(token)
+    if not isinstance(coordinator_id, int):
+        return coordinator_id
 
 
     data = flask.request.get_json()
@@ -671,8 +674,10 @@ def student_details(student_id):
 def degree_details(degree_id):
 
     token = flask.request.headers.get('Authorization')
-    if is_admin(token) != 1:
-        return is_admin(token)
+
+    admin_id = is_admin(token)
+    if not isinstance(admin_id, int):
+        return admin_id
 
     conn = db_connection()
     cur = conn.cursor()
@@ -753,8 +758,10 @@ def top3_students():
     logger.info('GET /dbproj/top3')
     
     token = flask.request.headers.get('Authorization')
-    if is_admin(token) != 1:
-        return is_admin(token)
+
+    admin_id = is_admin(token)
+    if not isinstance(admin_id, int):
+        return admin_id
 
     conn = db_connection()
     cur = conn.cursor()
@@ -896,6 +903,7 @@ def delete_student(student_id):
     except (Exception, psycopg2.DatabaseError) as error:
         logger.error(f'DELETE /delete_details/{student_id} - error: {error}')
     return flask.jsonify(response)
+
 
 if __name__ == '__main__':
     # set up logging
