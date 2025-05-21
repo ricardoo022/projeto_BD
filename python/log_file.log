@@ -357,3 +357,463 @@ WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 130-243-023
 INFO:logger:API stubs online: http://127.0.0.1:8080
 INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNzQ2OTE3MDgxfQ.nIVStqouBgaat0Ixjf-Ghbb7qghBYbzshP-QTO24GSI
+INFO:logger:POST /dbproj/enroll_course_edition/6
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:23:28] "[31m[1mPOST /dbproj/enroll_course_edition/6 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:23:36] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0NjE2fQ.BnY-4ZQzNnELrLZmvcwr9qJYbCe2wxwr4ZuVNzxVvx4
+INFO:logger:POST /dbproj/enroll_course_edition/6
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:24:05] "[31m[1mPOST /dbproj/enroll_course_edition/6 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:24:28] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNzQ3NzU0NjY4fQ.j27bSABoQrQRjJsrGnWJfI-U7orKSZqO5TDKvKxzdtQ
+INFO:logger:POST /dbproj/enroll_course_edition/6
+DEBUG:logger:Student ID: 2, Classes: [9]
+ERROR:logger:POST /enroll_course_edition - error: duplicate key value violates unique constraint "enrolment_class_pkey"
+DETAIL:  Key (student_person_id, class_time_table_id)=(2, 9) already exists.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:24:49] "POST /dbproj/enroll_course_edition/6 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNzQ3NzU0NjY4fQ.j27bSABoQrQRjJsrGnWJfI-U7orKSZqO5TDKvKxzdtQ
+INFO:logger:POST /dbproj/enroll_course_edition/6
+DEBUG:logger:Student ID: 2, Classes: [101]
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:01] "POST /dbproj/enroll_course_edition/6 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNzQ3NzU0NjY4fQ.j27bSABoQrQRjJsrGnWJfI-U7orKSZqO5TDKvKxzdtQ
+INFO:logger:POST /dbproj/enroll_course_edition/6
+DEBUG:logger:Student ID: 2, Classes: [100]
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:09] "POST /dbproj/enroll_course_edition/6 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZXhwIjoxNzQ3NzU0NjY4fQ.j27bSABoQrQRjJsrGnWJfI-U7orKSZqO5TDKvKxzdtQ
+INFO:logger:POST /dbproj/enroll_course_edition/6
+DEBUG:logger:Student ID: 2, Classes: [8]
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:25:16] "POST /dbproj/enroll_course_edition/6 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:26:43] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:26:50] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0ODEwfQ.GH2ANVL_kFne_Vv1I2aeJNXEtxNYH47EAahXhmP17GM
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:27:15] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:28:14] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0ODk0fQ.7HJMflYXd3E7VAsEEPjNGKH72snW2Bz5Ijm_t2Lou34
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:28:43] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:29:40] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:29:46] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:30:02] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:35:16] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:35:17] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:35:27] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:35:32] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel2', 'email': 'ze2@gmail.com', 'name': 'joao', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:37:19] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel3', 'email': 'ze3@gmail.com', 'name': 'joao', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023201734', 'birth_date': '12-05-2005'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:38:41] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel4', 'email': 'ze4@gmail.com', 'name': 'joao', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023201734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: duplicate key value violates unique constraint "student_n_student_key"
+DETAIL:  Key (n_student)=(2023201734) already exists.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:39:00] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel4', 'email': 'ze4@gmail.com', 'name': 'joao', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2023211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: duplicate key value violates unique constraint "person_username_email_key"
+DETAIL:  Key (username, email)=(ze_manel4, ze4@gmail.com) already exists.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:39:08] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel4', 'email': 'ze4@gmail.com', 'name': 'joao', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2083211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: duplicate key value violates unique constraint "person_username_email_key"
+DETAIL:  Key (username, email)=(ze_manel4, ze4@gmail.com) already exists.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:39:17] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel4', 'email': 'ze4@gmail.com', 'name': 'joao', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2083211734', 'birth_date': '12-05-2005'}
+ERROR:logger:POST /register/student - error: duplicate key value violates unique constraint "person_username_email_key"
+DETAIL:  Key (username, email)=(ze_manel4, ze4@gmail.com) already exists.
+
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:39:21] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzU0OTg2fQ.3Kt14e1EIgKMNpz3Y5ypNje1Q7wC1E-PG16_Tv5VpXk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'ze_manel5', 'email': 'ze5@gmail.com', 'name': 'joao', 'password': '123456789', 'district': 'Coimbra', 'address': 'Bairro Norton-Matos', 'n_student': '2083211734', 'birth_date': '12-05-2005'}
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 15:39:30] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:47:50] "[31m[1mGET /dbproj/top3 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:47:59] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:48:18] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:48:35] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:51:40] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:51:43] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:53:02] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:54:20] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:54:53] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:55:08] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+ERROR:logger:GET /dbproj/top3 - error: too many values to unpack (expected 4)
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 16:55:38] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 17:23:26] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 17:26:19] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 17:27:21] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 17:27:36] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 17:27:46] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [20/May/2025 17:34:53] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 00:46:38] "[31m[1mGET /dbproj/degree_details/27 HTTP/1.1[0m" 401 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 00:46:44] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzc2ODA0fQ.imLkh3-L5sNq3I0g4Eif_jQLEYALYLJ50tm1KCPO62E
+ERROR:logger:GET /dbproj/degree_details - error: not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 00:47:02] "GET /dbproj/degree_details/27 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzc2ODA0fQ.imLkh3-L5sNq3I0g4Eif_jQLEYALYLJ50tm1KCPO62E
+ERROR:logger:GET /dbproj/degree_details - error: not all arguments converted during string formatting
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 00:48:02] "GET /dbproj/degree_details/27 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzc2ODA0fQ.imLkh3-L5sNq3I0g4Eif_jQLEYALYLJ50tm1KCPO62E
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 00:49:18] "GET /dbproj/degree_details/27 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:logger:API stubs online: http://127.0.0.1:8080

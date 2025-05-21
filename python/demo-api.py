@@ -27,6 +27,7 @@ from functools import wraps
 import bcrypt
 from dotenv import load_dotenv
 import os
+import re
 
 load_dotenv()
 
@@ -42,20 +43,6 @@ StatusCodes = {
     'unauthorized': 401
 }
 
-
-##########################################################
-## DEMO ENDPOINTS
-## (the endpoints get_all_departments and add_departments serve only as examples!)
-##########################################################
-
-
-
-##########################################################
-## DEMO ENDPOINTS END
-##########################################################
-
-
-
 ##########################################################
 ## DATABASE ACCESS
 ##########################################################
@@ -70,10 +57,6 @@ def db_connection():
     )
 
     return db
-
-@app.route('/tables', methods=['POST'])
-# def create_table():
-
 
 ##########################################################
 ## AUTHENTICATION HELPERS
@@ -208,8 +191,8 @@ def post_a_person():
         if conn is not None:
             conn.close()
 
-
-def is_admin(token):
+def get_user_id(token):
+    
     try:
         if token.startswith("Bearer "):
             token = token.split(" ")[1] 
@@ -219,6 +202,11 @@ def is_admin(token):
         return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Token has expired', 'results': None}), 401
     except jwt.InvalidTokenError as e:
         return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Invalid token', 'results': None}), 401
+
+    return user_id
+
+def is_admin(token):
+    user_id = get_user_id(token)
 
     conn = db_connection()
     cur = conn.cursor()
@@ -238,15 +226,7 @@ def is_admin(token):
  
 
 def is_student(token):
-    try:
-        if token.startswith("Bearer "):
-            token = token.split(" ")[1] 
-        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-        user_id = decoded_token.get('id')
-    except jwt.ExpiredSignatureError:
-        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Token has expired', 'results': None}), 401
-    except jwt.InvalidTokenError as e:
-        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Invalid token', 'results': None}), 401
+    user_id = get_user_id(token)
 
     conn = db_connection()
     cur = conn.cursor()
@@ -266,15 +246,7 @@ def is_student(token):
 
 
 def is_coordinator(token):
-    try:
-        if token.startswith("Bearer "):
-            token = token.split(" ")[1] 
-        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-        user_id = decoded_token.get('id')
-    except jwt.ExpiredSignatureError:
-        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Token has expired', 'results': None}), 401
-    except jwt.InvalidTokenError as e:
-        return flask.jsonify({'status': StatusCodes['unauthorized'], 'errors': 'Invalid token', 'results': None}), 401
+    user_id = get_user_id(token)
 
     conn = db_connection()
     cur = conn.cursor()
@@ -291,8 +263,6 @@ def is_coordinator(token):
             conn.close()
 
     return 1
-
-
 
 
 ##########################################################
@@ -700,57 +670,172 @@ def student_details(student_id):
 @token_required
 def degree_details(degree_id):
 
-    resultDegreeDetails = [ # TODO
-        {
-            'course_id': random.randint(1, 200),
-            'course_name': "some coure",
-            'course_edition_id': random.randint(1, 200),
-            'course_edition_year': 2023,
-            'capacity': 30,
-            'enrolled_count': 27,
-            'approved_count': 20,
-            'coordinator_id': random.randint(1, 200),
-            'instructors': [random.randint(1, 200), random.randint(1, 200)]
-        }
-    ]
+    token = flask.request.headers.get('Authorization')
+    if is_admin(token) != 1:
+        return is_admin(token)
 
-    response = {'status': StatusCodes['success'], 'errors': None, 'results': resultDegreeDetails}
+    conn = db_connection()
+    cur = conn.cursor()
+
+    try:
+        cur.execute('''
+        SELECT 
+            c.id_course, 
+            c.name, 
+            e.id, 
+            e.year_, 
+            e.enroled_count, 
+            e.capacity,
+            
+            (
+            SELECT array_agg(p.id)
+            FROM person p
+            JOIN staff s ON p.id = s.person_id
+            JOIN professor pro ON s.person_id = pro.staff_person_id
+            JOIN professor_edition pe ON pro.staff_person_id = pe.professor_staff_person_id
+            WHERE pro.asistente = true
+            AND pe.edition_id = e.id
+            ) AS assistants,
+            (
+            SELECT array_agg(p.id)
+            FROM person p
+            JOIN staff s ON p.id = s.person_id
+            JOIN professor pro ON s.person_id = pro.staff_person_id
+            JOIN professor_edition pe ON pro.staff_person_id = pe.professor_staff_person_id
+            WHERE pro.cordenad = true
+            AND pe.edition_id = e.id
+            ) AS coordinator
+            
+        FROM degree d
+        JOIN degree_course dc ON d.id = dc.degree_id
+        JOIN course c ON c.id_course = dc.course_id_course
+        JOIN course_edition ce ON c.id_course = ce.course_id_course
+        JOIN edition e ON ce.edition_id = e.id
+        WHERE d.id = %s
+        ORDER BY c.id_course
+        ''', (degree_id,))
+
+        results = cur.fetchall()
+        result_degree_details = []
+        
+        for row in results:
+            course_id, course_name, edition_id, edition_year, enrolled_count, capacity, instructors, coordinator = row
+            
+            course_record = {
+                'course_id': course_id,
+                'course_name': course_name,
+                'course_edition_id': edition_id,
+                'course_edition_year': edition_year,
+                'enrolled_count': enrolled_count,
+                'capacity': capacity,
+                'coordinator_id': coordinator,
+                'instructors': instructors,
+            }
+            
+            result_degree_details.append(course_record)
+
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': result_degree_details}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'GET /dbproj/degree_details - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error), 'results': None}
+        conn.rollback()
+
+    finally:
+        if conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
 
 @app.route('/dbproj/top3', methods=['GET'])
 @token_required
 def top3_students():
+    logger.info('GET /dbproj/top3')
+    
+    token = flask.request.headers.get('Authorization')
+    if is_admin(token) != 1:
+        return is_admin(token)
 
-    resultTop3 = [ # TODO
-        {
-            'student_name': "John Doe",
-            'average_grade': 15.1,
-            'grades': [
-                {
-                    'course_edition_id': random.randint(1, 200),
-                    'course_edition_name': "some course",
-                    'grade': 15.1,
-                    'date': datetime.datetime(2024, 5, 12)
-                }
-            ],
-            'activities': [random.randint(1, 200), random.randint(1, 200)]
-        },
-        {
-            'student_name': "Jane Doe",
-            'average_grade': 16.3,
-            'grades': [
-                {
-                    'course_edition_id': random.randint(1, 200),
-                    'course_edition_name': "another course",
-                    'grade': 15.1,
-                    'date': datetime.datetime(2023, 5, 11)
-                }
-            ],
-            'activities': [random.randint(1, 200)]
-        }
-    ]
+    conn = db_connection()
+    cur = conn.cursor()
 
-    response = {'status': StatusCodes['success'], 'errors': None, 'results': resultTop3}
+    try:
+        cur.execute('''
+        SELECT 
+            p.name AS student_name, 
+            gd.average AS average,
+            (
+            SELECT (g.grade ,g.date_of_grade, e.name, e.id)
+                FROM grade g
+                JOIN period_ p2 ON g.period__id = p2.id
+                JOIN edition e ON p2.edition_id = e.id
+                JOIN course_edition ce ON e.id = ce.edition_id
+                JOIN course c ON c.id_course = ce.course_id_course
+                WHERE g.student_person_id = s.person_id
+            ) AS grades_info,
+            (
+                SELECT ea.name
+                FROM student_extracurriclar_activities sea
+                JOIN extracurriclar_activities ea ON ea.id_activities = sea.extracurriclar_activities_id_activities
+                WHERE sea.student_person_id = s.person_id
+            ) AS extracurricular_activities
+            
+        FROM student s
+        JOIN person p ON p.id = s.person_id
+        JOIN grades_degree gd ON gd.student_person_id = s.person_id
+
+        ORDER BY gd.average DESC LIMIT 3
+        ''')
+        
+        results = cur.fetchall()
+        result_top3 = []
+        
+        for row in results:
+            student_name, average_grade, grades_tuple, activities = row
+            
+            grades = []
+            if grades_tuple is not None:
+                
+                try:
+                    tuple_string = str(grades_tuple)
+                    tuple_string = tuple_string.strip('()')
+                    
+                    parts = tuple_string.split(',')
+
+                    grade_value = int(parts[0])
+                    grade_date = parts[1].strip()
+                    course_name = parts[2].strip('"')
+                    edition_id = int(parts[3].strip())
+                    
+                    grades.append({
+                        'course_edition_id': edition_id,
+                        'course_edition_name': course_name,
+                        'grade': grade_value,
+                        'date': grade_date
+                    })
+                except Exception as e:
+                    print(f"Error parsing tuple: {tuple_string}, Error: {str(e)}")
+
+            student_record = {
+                'student_name': student_name,
+                'average_grade': float(average_grade),
+                'grades': grades,
+                'activities': [activities] if activities else []
+            }
+                       
+            result_top3.append(student_record)
+
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': result_top3}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'GET /dbproj/top3 - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error), 'results': None}
+        conn.rollback()
+
+    finally:
+        if conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
 
 @app.route('/dbproj/top_by_district', methods=['GET'])
@@ -801,6 +886,15 @@ def monthly_report():
 @token_required
 def delete_student(student_id):
     response = {'status': StatusCodes['success'], 'errors': None}
+
+    conn = db_connection()
+    cur = conn.cursor()
+    try:
+        cur.execute('DELETE FROM student WHERE n_student = %s', (student_id,))
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Student deleted successfully'}
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'DELETE /delete_details/{student_id} - error: {error}')
     return flask.jsonify(response)
 
 if __name__ == '__main__':
