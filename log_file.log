@@ -1398,3 +1398,79 @@ INFO:logger:token: Bearer Sample token, should be random!
 INFO:werkzeug:127.0.0.1 - - [20/May/2025 17:44:22] "DELETE /dbproj/delete_details/1234460891 HTTP/1.1" 200 -
 INFO:logger:API stubs online: http://127.0.0.1:8080
 INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:08:01] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:09:01] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:09:50] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZXhwIjoxNzQ2OTU5NDUxfQ.txd7jIFxMH5DEt9m5K4q8-wUcCx8OkX2-FSbqtbKdps
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'pedro', 'name': 'Andre', 'email': 'p212432@example.com', 'password': '123456', 'district': 'Coimbra', 'address': '123 Main Street', 'birth_date': '12-05-1995', 'n_staff': 1313213010}
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:11:07] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:11:21] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsImV4cCI6MTc1MDQ1NzQ4MX0.uuHXoK29VtOzvpQxLOXEtXdw4ps2buVZLHxgInptUnk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'pp', 'email': 'mptt@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234400891', 'name': 'matt', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/student - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:12:01] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzgsImV4cCI6MTc1MDQ1NzQ4MX0.uuHXoK29VtOzvpQxLOXEtXdw4ps2buVZLHxgInptUnk
+INFO:logger:POST /dbproj/register/student
+DEBUG:logger:POST /dbproj/register/student - payload: {'username': 'pppp', 'email': 'mptt@eyxample.com', 'password': '123456', 'district': 'Coimybra', 'address': '123 Myain Street', 'n_student': '1234400891', 'name': 'mat', 'birth_date': '12-05-1995'}
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:12:14] "POST /dbproj/register/student HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:12:44] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksImV4cCI6MTc1MDQ1NzU2NH0.zTyR5wc6BqVp9mIH8REBHzmrHhVvgzsRxnHGBCF4hdY
+ERROR:logger:POST /enroll_activity - error: ERRO:  coluna "id" não existe
+LINE 1: SELECT id FROM extracurriclar_activities WHERE id = '1'
+               ^
+
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:13:10] "POST /dbproj/enroll_activity/1 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksImV4cCI6MTc1MDQ1NzU2NH0.zTyR5wc6BqVp9mIH8REBHzmrHhVvgzsRxnHGBCF4hdY
+ERROR:logger:POST /enroll_activity - error: ERRO:  coluna "id" não existe
+LINE 1: SELECT id FROM extracurriclar_activities WHERE id = '1'
+               ^
+
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:14:25] "POST /dbproj/enroll_activity/1 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksImV4cCI6MTc1MDQ1NzU2NH0.zTyR5wc6BqVp9mIH8REBHzmrHhVvgzsRxnHGBCF4hdY
+ERROR:logger:POST /enroll_activity - error: ERRO:  coluna "id" não existe
+LINE 1: SELECT id FROM extracurriclar_activities WHERE id = '1'
+               ^
+
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:15:01] "POST /dbproj/enroll_activity/1 HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksImV4cCI6MTc1MDQ1NzU2NH0.zTyR5wc6BqVp9mIH8REBHzmrHhVvgzsRxnHGBCF4hdY
+ERROR:logger:POST /enroll_activity - error: ERRO:  coluna "id" não existe
+LINE 1: SELECT id FROM extracurriclar_activities WHERE id = '1'
+               ^
+
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:15:02] "POST /dbproj/enroll_activity/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksImV4cCI6MTc1MDQ1NzU2NH0.zTyR5wc6BqVp9mIH8REBHzmrHhVvgzsRxnHGBCF4hdY
+ERROR:logger:POST /enroll_activity - error: ERRO:  coluna "id" não existe
+LINE 1: SELECT id FROM extracurriclar_activities WHERE id_activities...
+               ^
+
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:16:42] "POST /dbproj/enroll_activity/1 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:werkzeug: * Detected change in 'c:\\Users\\Ricardo\\OneDrive\\Ambiente de Trabalho\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 143-080-066
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzksImV4cCI6MTc1MDQ1NzU2NH0.zTyR5wc6BqVp9mIH8REBHzmrHhVvgzsRxnHGBCF4hdY
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 23:17:34] "POST /dbproj/enroll_activity/1 HTTP/1.1" 200 -

@@ -554,7 +554,48 @@ def enroll_degree(degree_id):
 @app.route('/dbproj/enroll_activity/<activity_id>', methods=['POST'])
 @token_required
 def enroll_activity(activity_id):
-    response = {'status': StatusCodes['success'], 'errors': None}
+    token = flask.request.headers.get('Authorization')
+
+    # Só estudantes podem inscrever-se
+    if is_student(token) != 1:
+        return is_student(token)
+
+    try:
+        if token.startswith("Bearer "):
+            token = token.split(" ")[1]
+        decoded_token = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
+        student_id = decoded_token.get('id')
+
+        conn = db_connection()
+        cur = conn.cursor()
+
+        # Verifica se a atividade existe
+        cur.execute('SELECT id_activities FROM extracurriclar_activities WHERE id_activities = %s', (activity_id,))
+        if not cur.fetchone():
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Activity not found', 'results': None})
+
+        # Faz a inscrição
+        cur.execute('''
+            INSERT INTO student_extracurriclar_activities (student_person_id, extracurriclar_activities_id_activities)
+            SELECT %s, %s
+            WHERE NOT EXISTS (
+                SELECT 1 FROM student_extracurriclar_activities
+                WHERE student_person_id = %s AND extracurriclar_activities_id_activities = %s
+            )
+        ''', (student_id, activity_id, student_id, activity_id))
+
+        conn.commit()
+        response = {'status': StatusCodes['success'], 'errors': None, 'results': f'Student {student_id} enrolled in activity {activity_id}'}
+
+    except (Exception, psycopg2.DatabaseError) as error:
+        logger.error(f'POST /enroll_activity - error: {error}')
+        response = {'status': StatusCodes['internal_error'], 'errors': str(error)}
+        if 'conn' in locals() and conn is not None:
+            conn.rollback()
+    finally:
+        if 'conn' in locals() and conn is not None:
+            conn.close()
+
     return flask.jsonify(response)
 
 @app.route('/dbproj/enroll_course_edition/<course_edition_id>', methods=['POST'])
@@ -643,12 +684,36 @@ def submit_grades(course_edition_id):
     period = data.get('period')
     grades = data.get('grades', [])
 
-    if not period or not grades:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Evaluation period and grades are required', 'results': None})
+    # Validate period
+    if not period:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Evaluation period is required', 'results': None})
+    
+    # Validate grades array
+    if not grades:
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Grades array is required', 'results': None})
+    
+    if not isinstance(grades, list):
+        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Grades must be an array', 'results': None})
+
+    # Validate each grade entry
+    for grade in grades:
+        if not isinstance(grade, list) or len(grade) != 3:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': 'Each grade must be an array with exactly 3 elements: [student_id, grade_value, date]', 'results': None})
         
-    is_valid, error_message = verify_grade(grades)
-    if not is_valid:
-        return flask.jsonify({'status': StatusCodes['api_error'], 'errors': error_message, 'results': None})
+        student_id, value, date = grade
+        
+        # Validate student_id
+        if not isinstance(student_id, (int, str)) or not str(student_id).isdigit() or len(str(student_id)) != 10:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid student ID: {student_id}. Must be a 10-digit number.', 'results': None})
+        
+        # Validate grade value
+        if not isinstance(value, (int, float)) or value < 0 or value > 20:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': f'Invalid grade value: {value}. Must be a number between 0 and 20.', 'results': None})
+        
+        # Validate date format
+        is_valid, error_message = validate_date(date)
+        if not is_valid:
+            return flask.jsonify({'status': StatusCodes['api_error'], 'errors': error_message, 'results': None})
 
     conn = db_connection()
     cur = conn.cursor()
@@ -810,6 +875,12 @@ def delete_student(student_id):
     conn = db_connection()
     cur = conn.cursor()
     try:
+        conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_SERIALIZABLE)
+        # Verificar se o estudante existe antes de tentar apagar
+        cur.execute('SELECT 1 FROM student WHERE n_student = %s FOR UPDATE', (student_id,))
+        if not cur.fetchone():
+            return flask.jsonify({'status': StatusCodes['api_error'],'errors': 'Student not found', 'results': None})
+
         cur.execute('DELETE FROM student WHERE n_student = %s', (student_id,))
         conn.commit()
         response = {'status': StatusCodes['success'], 'errors': None, 'results': 'Student deleted successfully'}
