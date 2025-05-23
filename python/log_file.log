@@ -827,3 +827,84 @@ INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwI
 INFO:werkzeug:127.0.0.1 - - [21/May/2025 01:11:00] "GET /dbproj/degree_details/27 HTTP/1.1" 200 -
 INFO:logger:API stubs online: http://127.0.0.1:8080
 INFO:logger:API stubs online: http://127.0.0.1:8080
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwMzQ4MDc5fQ.TisoKXYTDmcdJgTkpwexfPbmwgAyBeD37MxO2cHAv7Q
+INFO:logger:GET /dbproj/top3
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 16:28:32] "GET /dbproj/top3 HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:8080
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:GET /top_by_district
+ERROR:logger:Error checking admin status: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 20:01:18] "[35m[1mGET /dbproj/top_by_district HTTP/1.1[0m" 500 -
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:GET /top_by_district
+ERROR:logger:Error checking admin status: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 20:01:22] "[35m[1mGET /dbproj/top_by_district HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer Sample token, should be random!
+INFO:logger:GET /top_by_district
+ERROR:logger:Error checking admin status: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 20:02:28] "[35m[1mGET /dbproj/top_by_district HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 20:02:59] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzQ3NzUwMTY3fQ.E-QLRdo07WGgIfTW2GFLW-YTNXStikcXsukBcmEyQCo
+INFO:logger:POST /dbproj/register/staff
+DEBUG:logger:POST /dbproj/register/staff - payload: {'username': 'staff_3', 'email': 'staff_3@gmail.com', 'password': '123456789', 'district': 'Codimbra', 'address': 'Staff', 'n_staff': '2023219991', 'birth_date': '12-05-1995'}
+ERROR:logger:POST /register/staff - error: can't adapt type 'Response'
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 22:04:16] "POST /dbproj/register/staff HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 22:04:25] "PUT /dbproj/user HTTP/1.1" 200 -
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwNDUzNDY1fQ.LwtbJSX7Xd9mZWeHAITS7L7Gu-iuVU9X1Evh1VTAM2Q
+INFO:logger:GET /top_by_district
+INFO:werkzeug:127.0.0.1 - - [21/May/2025 22:04:49] "GET /dbproj/top_by_district HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Restarting with stat
+INFO:logger:API stubs online: http://127.0.0.1:8080
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:werkzeug: * Detected change in 'C:\\Users\\japca\\OneDrive\\Ambiente de Trabalho\\Universidade\\2ºano\\BD\\projeto_BD\\python\\demo-api.py', reloading
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 631-879-455
+INFO:logger:token: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZXhwIjoxNzUwNDY1NzA1fQ.XaiKFJ4WfIln47QjgiP5OAWrQPH9OjUHLnFXQ7LfXL0
+INFO:werkzeug:127.0.0.1 - - [22/May/2025 02:21:43] "GET /dbproj/report HTTP/1.1" 200 -
